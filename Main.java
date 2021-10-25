@@ -8,23 +8,23 @@ public class Main {
 		sc.close();
 
 System.out.println("result:");
-		if (x<-2 || x> -1) {
+		if (x<-3 || x> 1) {
 			System.out.println("error");
 			return;
 		}
 
 		double s, a; int i;
-		s = -(1+x)*(1+x);
-		a = -(1+x)*(1+x);
-		i = 1;
-		while (Math.abs(a/i) > 0.001) {
-			a = -a*(1+x)*(1+x);
-      i++;
-			s = s + a / i;
+		s = 1./3.;
+		a = s;
+		i = 2;
+		while (i<20) {
+			a = -a*(x+2)*(x+2)/3;
+      i+=2;
+			s = s + a;
       
 		}
     
-		System.out.printf("function=%.4f", Math.log(1/(2+2*x+x*x)));
+		System.out.printf("function=%.4f", 1/(x*x+4*x+7));
     System.out.println();  
 		System.out.printf("summa=%.4f", s);
     System.out.println();
